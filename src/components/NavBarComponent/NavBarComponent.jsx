@@ -8,8 +8,8 @@ import CardWidgetComponent from '../CartWidgetComponent/CartWidgetComponent';
 
 const NavBarComponent = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" bg="dark">
-      <Container fluid>
+    <Navbar expand="lg" className="bg-body-tertiary" >
+      <Container fluid >
         <Navbar.Brand href="#">Ecommerce</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

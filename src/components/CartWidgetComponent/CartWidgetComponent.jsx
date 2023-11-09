@@ -4,11 +4,11 @@ import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
 const CardWidgetComponent = () => {
     const iconStyles = {
         fontSize: '1.3rem',
-        paddingRight: '10px'
+        paddingRight: '10px',
+        color: "#ed4902",
     }
     return (
         <div>
-            <FontAwesomeIcon icon={faCartShopping} style={{color: "#ed4902",}} />
             <FontAwesomeIcon  icon={faCartShopping} style={iconStyles} />
             <span style={{fontSize: '1.4rem'}}>7</span>
         </div>
