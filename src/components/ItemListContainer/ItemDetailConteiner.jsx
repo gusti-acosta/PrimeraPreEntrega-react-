@@ -1,9 +1,8 @@
-import React from "react";
-import {Card} from "react-bootstrap"
+import React from 'react'
 
-const ItemListConteiner = ({products}) =>{
-    return (
-        <div
+const ItemDetailConteiner = () => {
+  return (
+    <div
         style={{
           display: "flex",
           flexWrap: "wrap",
@@ -17,9 +16,7 @@ const ItemListConteiner = ({products}) =>{
             key={product.id} 
             style={{ width: "18rem", margin: 20 }}
             >
-            <link to={`/item/${product.id}`}>
             <Card.Img variant="top" src={product.thumbnail} />
-            </link>
               <Card.Body>
                 <Card.Title>{product.title}</Card.Title>
                 <Card.Text>{product.description}</Card.Text>
@@ -28,7 +25,7 @@ const ItemListConteiner = ({products}) =>{
           );
         })}
       </div>
-    );
-};
+  )
+}
 
-export default ItemListConteiner;
+export default ItemDetailConteiner
