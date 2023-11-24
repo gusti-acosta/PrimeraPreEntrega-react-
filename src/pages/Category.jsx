@@ -5,16 +5,16 @@ import { useParams } from "react-router-dom";
 
 const Category = () =>{
     const [products, setProducts] = useState([])
-
+    const { categoryId} = useParams();
     useEffect(() => {
         axios
-            .get('https://dummyjson.com/products/?limit=10')
+            .get(`https://dummyjson.com/products/category/${categoryId}`)
             .then((res) => {
                 setProducts(res.data.products);
             })
             .catch((error) => console.log(error));    
-    }, []);
-    const { categoryId } = useParams();
+    }, [categoryId ]);
+    
     
     return <ItemListConteiner products={products}/>;
 };

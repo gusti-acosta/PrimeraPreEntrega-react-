@@ -5,7 +5,7 @@ const CardWidgetComponent = () => {
     const iconStyles = {
         fontSize: '1.3rem',
         paddingRight: '10px',
-        color: "#ed4902",
+        color: "#fff",
     }
     return (
         <div>
