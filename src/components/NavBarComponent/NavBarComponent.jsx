@@ -1,29 +1,14 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import {Button, Container,Form, Nav, Navbar,NavDropdown } from 'react-bootstrap';
 import CardWidgetComponent from '../CartWidgetComponent/CartWidgetComponent';
 import { Link } from "react-router-dom";
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 
-const NavBarComponent = () => {
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    axios
-      .get('https://dummyjson.com/products/categories')
-      .then((res) => setCategories(res.data))
-      .catch((error) => console.log(error))
 
-  })
+export const NavBarComponent = () => {
   return (
-    <nav style={{
+      <Navbar style={{
       backgroundColor: "#FF5733",
       color:"#fff",
     }}>
-      <Navbar >
         <Container fluid >
           <Navbar.Brand>
             <Link to={"/"}>
@@ -37,26 +22,22 @@ const NavBarComponent = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Inicio</Nav.Link>
-              <Nav.Link href="#action2">Ofertas</Nav.Link>
-              <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                {categories.map((category, index) => {
-                  return (
-                  <NavDropdown.Item key={index}>
-                    <Link to={`/category/${category}`} styte={{ textDecoration: "none", color: "black"}}>
-                      {category}
-                    </Link>
-                  </NavDropdown.Item>
-                  );
-                  })}
-              </NavDropdown>
-              <Nav.Link href="#">Ayuda</Nav.Link>
+              <Link to="/">Home</Link>
+              <Link to="#link">Productos</Link>
+              <NavDropdown title="Categorías" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  <Link to={"/category/laptops"}>Laptops</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  <Link to={"/category/smartphones"}>Smartphones</Link>
+                </NavDropdown.Item>
+            </NavDropdown>
             </Nav>
             
             <Form className="d-flex">
               <Form.Control
                 type="search"
-                placeholder="Search"
+                placeholder="Buscar"
                 className="me-2"
                 aria-label="Search"
               />
@@ -66,8 +47,6 @@ const NavBarComponent = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </nav>
   );
 }
 
-export default NavBarComponent;
