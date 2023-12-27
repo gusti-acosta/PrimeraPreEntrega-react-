@@ -17,9 +17,33 @@ export const ItemQuantitySelector = () => {
     }
     return (
         <div>
-            <Button onClick={handleSubstractProduct}> - </Button>
-            <input type="number" value={quantity}disabled/>
-            <Button onClick={handleAddProduct}>+</Button>
+            <button onClick={handleSubstractProduct} style={{
+                display: "inline-block",
+                padding: "8px 16px",
+                backgroundColor: "#FF5733",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "5px",
+                transition: "background-color 0.3s ease",}}>
+             - 
+            </button>
+            <input type="number" value={quantity}disabled style={{
+                padding: "0px 0px",
+                width:"40px",
+                height: "40px",
+            }} />
+            <button onClick={handleAddProduct} style={{
+                display: "inline-block",
+                padding: "8px 16px",
+                backgroundColor: "#FF5733",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "5px",
+                transition: "background-color 0.3s ease",
+                marginRight: "10px"
+            }}>
+                +
+            </button>
             <AddItemButton quantity={quantity} handleResetQuantity={handleResetQuantity}/>
 
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card"
 import { Link } from "react-router-dom";
+import { AddItemButton } from "../AddItemButton";
 
 
 export const ItemListContainer = ({products}) =>{
@@ -22,27 +23,21 @@ export const ItemListContainer = ({products}) =>{
                 <Card.Img variant="top" src={product.thumbnail} style={{width: "287px", borderBottom: "1px solid #ccc",height: "200px"}}/>
               </Link>
               <Card.Body>
-                <Card.Title>{product.title}</Card.Title>
+                <Card.Title style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"  }}>
+                  {product.title}
+                  </Card.Title>
                 <Card.Text style={{
                   maxHeight: "100px",
                   minHeight: "100px",
                   margin: "10px 0",
                   overflow: "hidden",
                 }}
-                
                 >{product.description}</Card.Text>
-                <button style={{
-                  display: "inline-block",
-                  padding: "8px 16px",
-                  backgroundColor: "#FF5733",
-                  color: "white",
-                  textDecoration: "none",
-                  borderRadius: "5px",
-                  transition: "background-color 0.3s ease",
-                }}
-                >Agregar al carrito
-                </button>
-                
+                <p>
+                  Precio: ${product.price}
+                </p>
+
+                <AddItemButton />
               </Card.Body>
             </Card>
           );

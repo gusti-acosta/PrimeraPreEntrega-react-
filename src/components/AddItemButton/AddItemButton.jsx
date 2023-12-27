@@ -11,7 +11,17 @@ export const AddItemButton = ({label = "Agregar al carrito", quantity, handleRes
     handleResetQuantity();
   }
   return (
-    <Button onClick={handleAddCart} style={{marginTop: '10'}}>{label}</Button>
+    <button onClick={handleAddCart} style={{
+      display: "inline-block",
+      padding: "8px 16px",
+      backgroundColor: "#FF5733",
+      color: "white",
+      textDecoration: "none",
+      borderRadius: "5px",
+      transition: "background-color 0.3s ease",}}
+    >
+      {label}
+    </button>
   )
 }
 

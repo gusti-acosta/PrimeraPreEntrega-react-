@@ -3,9 +3,12 @@ import { Home } from "../pages/Home";
 import { NavBarComponent } from "../components";
 import { ItemDetailContainer } from "../pages";
 import Category from "../pages/Category";
+import CarouselComponent from "../components/CarouselComponent/CarouselComponent";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { CarouselItem } from "react-bootstrap";
+import MiCuenta from "../pages/MiCuenta";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,6 +31,7 @@ export const MainRouter = () => {
       <NavBarComponent/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/MiCuenta" element={<MiCuenta />} />
         <Route path="/item/:productId" element={<ItemDetailContainer />} />
         <Route path="/category/:categoryId" element={<Category />} />
       </Routes>

@@ -22,14 +22,17 @@ export const NavBarComponent = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Link to="/">Home</Link>
-              <Link to="#link">Productos</Link>
+              <Nav.Link href="/" >Inicio</Nav.Link>
+              <Nav.Link href="/MiCuenta" >Mi cuenta</Nav.Link>
               <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                  <Link to={"/category/laptops"}>Laptops</Link>
+                <NavDropdown.Item  href="/category/laptops" >
+                  Laptops
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  <Link to={"/category/smartphones"}>Smartphones</Link>
+                <NavDropdown.Item href="/category/smartphones">
+                  Celulares
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/category/fragrances">
+                  Perfumes
                 </NavDropdown.Item>
             </NavDropdown>
             </Nav>
@@ -46,7 +49,7 @@ export const NavBarComponent = () => {
             <CardWidgetComponent/>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar> 
   );
 }
 
